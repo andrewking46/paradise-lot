@@ -3,7 +3,7 @@
   "name": "Paradise Lot",
   "short_name": "Paradise Lot",
   "description": "Build a tropical resort in pixel art, from pools and slides to dolphin lagoons, for guests who say exactly what they think. Plays in the browser, offline too.",
-  "lang": "en",
+  "lang": "en-US",
   "dir": "ltr",
   "categories": ["games", "entertainment"],
   "start_url": "./",
