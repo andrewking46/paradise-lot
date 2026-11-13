@@ -7,18 +7,25 @@
     <meta name="description" content="Build a tropical resort in pixel art, from pools and slides to dolphin lagoons, for guests who say exactly what they think. Plays in the browser, offline too." />
     <link rel="canonical" href="https://andrewking46.github.io/paradise-lot/" />
     <meta name="robots" content="max-image-preview:large" />
-    <meta name="format-detection" content="telephone=no" />
+    <!-- Money, dates and names in the game are never phone numbers, dates, addresses or emails to tap -->
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+    <!-- The game draws its own colors: no browser's or extension's dark mode recolors it -->
+    <meta name="color-scheme" content="only light" />
+    <meta name="darkreader-lock" />
 
     <!-- Installed, and on the home screen -->
     <link rel="manifest" href="./manifest.webmanifest" />
     <meta name="application-name" content="Paradise Lot" />
-    <meta name="theme-color" content="#2c8d86" />
+    <!-- The night blue of the loading screen and the page behind the game, for the browser's bar -->
+    <meta name="theme-color" content="#121a38" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="Paradise Lot" />
+    <!-- Installed on an iPhone, the resort runs on under the status bar (the toolbar keeps clear of it) -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <link rel="icon" type="image/png" sizes="32x32" href="./icons/app-32.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="./icons/app-192.png" />
-    <link rel="apple-touch-icon" href="./icons/app-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./icons/app-180.png" />
 
     <!-- The loading screen's name, in the game's pixel font from the first paint -->
     <link rel="preload" href="./assets/tiny5-latin-400-normal-BsIaeAHC.woff2" as="font" type="font/woff2" crossorigin />
@@ -57,12 +64,13 @@
         "genre": "Construction and management simulation",
         "gamePlatform": "Web browser",
         "applicationCategory": "Game",
+        "playMode": "SinglePlayer",
         "operatingSystem": "Any",
         "inLanguage": "en-US"
       }
     </script>
-    <script type="module" crossorigin src="./assets/index-DHQczTNb.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-COd0U4O3.css">
+    <script type="module" crossorigin src="./assets/index-BwyDnv3R.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DJTgOiG4.css">
   </head>
   <body>
     <div id="app">
@@ -71,7 +79,7 @@
     </div>
     <div id="loading">
       <div class="loading-icon"><img src="./icons/app-192.png" alt="" width="96" height="96" /></div>
-      <div class="loading-name">Paradise Lot</div>
+      <div class="loading-name" translate="no">Paradise Lot</div>
       <div class="loading-bar" role="progressbar" aria-label="Loading the game"></div>
       <p class="loading-failed">The game couldn’t start. Reload the page to try again.</p>
     </div>
