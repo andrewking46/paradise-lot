@@ -20,6 +20,17 @@
     <link rel="icon" type="image/png" sizes="192x192" href="./icons/app-192.png" />
     <link rel="apple-touch-icon" href="./icons/app-192.png" />
 
+    <!-- The loading screen's name, in the game's pixel font from the first paint -->
+    <link rel="preload" href="./assets/tiny5-latin-400-normal-BsIaeAHC.woff2" as="font" type="font/woff2" crossorigin />
+    <script>
+      // The game couldn't start: a script of it didn't come, or one failed as it began. The
+      // loading screen says so (ui.css); once the game is drawn, it's gone, and this with it.
+      addEventListener('error', (e) => {
+        if (e.error || e.target instanceof HTMLScriptElement) document.documentElement.dataset.failed = '';
+      }, true);
+      addEventListener('unhandledrejection', () => { document.documentElement.dataset.failed = ''; });
+    </script>
+
     <!-- Link previews: made by npm run share-image -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Paradise Lot" />
@@ -50,13 +61,19 @@
         "inLanguage": "en-US"
       }
     </script>
-    <script type="module" crossorigin src="./assets/index-CTQ_6grc.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CGlQj-3Q.css">
+    <script type="module" crossorigin src="./assets/index-B15-48sZ.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BnimsYB7.css">
   </head>
   <body>
     <div id="app">
       <canvas id="world"></canvas>
       <div id="ui"></div>
+    </div>
+    <div id="loading">
+      <img class="loading-icon" src="./icons/app-192.png" alt="" width="96" height="96" />
+      <div class="loading-name">Paradise Lot</div>
+      <div class="loading-bar" role="progressbar" aria-label="Loading the game"></div>
+      <p class="loading-failed">The game couldn’t start. Reload the page to try again.</p>
     </div>
   </body>
 </html>
